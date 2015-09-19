@@ -2,8 +2,36 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Iterator;
 
-public class GenericStack <Item>{
+public class GenericStack <Item> implements Iterable<Item>{
+    @Override
+    public Iterator<Item> iterator() {
+        return new ListIter();
+    }
+
+    private class ListIter implements Iterator<Item>{
+
+        private Node current=first;
+
+        @Override
+        public boolean hasNext() {
+            return current!=null;
+        }
+
+        @Override
+        public Item next() {
+            Item item=current.item;
+            current=current.next;
+            return item;
+        }
+
+        @Override
+        public void remove() {
+
+        }
+    }
+
     private class Node{
         Item item;
         Node next;
@@ -52,6 +80,10 @@ public class GenericStack <Item>{
                 stackOfStrings.push(tokens[i]);
                 System.out.println("Pushed "+tokens[i]);
             }
+        }
+        for(String s:stackOfStrings)
+        {
+            System.out.println(s);
         }
 
     }
