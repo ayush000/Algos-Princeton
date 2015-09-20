@@ -55,12 +55,12 @@ public class QueueOfStrings {
         QueueOfStrings stackOfStrings = new QueueOfStrings();
         String line = br.readLine();
         String[] tokens = line.split("\\s+");
-        for (int i = 0; i < tokens.length; i++) {
-            if (tokens[i].equals("-")) {
+        for (String token : tokens) {
+            if (token.equals("-")) {
                 System.out.println("Popped " + stackOfStrings.dequeue());
             } else {
-                stackOfStrings.enqueue(tokens[i]);
-                System.out.println("Pushed " + tokens[i]);
+                stackOfStrings.enqueue(token);
+                System.out.println("Pushed " + token);
             }
         }
 
