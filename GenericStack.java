@@ -62,6 +62,10 @@ public class GenericStack <Item> implements Iterable<Item>{
     {
         return 0;
     }
+    public Item top()
+    {
+        return first.item;
+    }
 
     public static void main(String[] args) throws IOException{
         // write your code here

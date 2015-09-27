@@ -34,13 +34,14 @@ public class ResizingStackOfStrings<Item> implements Iterable<Item> {
 
     public Item pop() {
         s[N] = null;
-        System.out.println("Length is "+s.length+", s[0] is "+s[0]);
+//        System.out.println("Length is "+s.length+", s[0] is "+s[0]);
         if (N > 0 && N == s.length / 4) {
 
             resize(s.length / 2);
         }
         return s[--N];
     }
+
 
     public static void main(String[] args) throws IOException {
         // write your code here
@@ -80,7 +81,7 @@ public class ResizingStackOfStrings<Item> implements Iterable<Item> {
 
         @Override
         public Item next() {
-            System.out.println("Current: "+current);
+//            System.out.println("Current: "+current);
 //            current=current-2;
             return s[--current];
 //            return s[1];

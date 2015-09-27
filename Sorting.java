@@ -5,9 +5,6 @@ import java.io.IOException;
 
 import static java.lang.Math.*;
 
-/**
- * Created by swarn on 23/09/15.
- */
 public class Sorting {
     public static boolean isSorted(Comparable[] a){
 
@@ -86,7 +83,7 @@ public class Sorting {
 //        for(int i=0;i<5;i++) {
             long startTime = System.currentTimeMillis();
             Sorting ins = new Sorting();
-            ins.selectSort(a);
+            ins.shellSort(a);
             long endTime = System.currentTimeMillis();
             long totalTime = endTime - startTime;
 //            avg+=totalTime;
